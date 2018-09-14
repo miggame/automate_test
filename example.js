@@ -23,6 +23,10 @@ async function openGame() {
     }).then(() => {
         page.click(selector).then(() => {
             console.log('then click done');
+            setTimeout(() => {
+                browser.close();
+            }, 20000);
+            // browser.close();
         })
     }).catch((err) => {
         console.log('catch click');
@@ -33,5 +37,5 @@ async function openGame() {
     // await page.click();
 }
 
-// setInterval(openGame, 20000);
-openGame();
+setInterval(openGame, 20000);
+// openGame();
